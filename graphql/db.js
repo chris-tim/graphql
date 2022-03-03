@@ -19,16 +19,16 @@ export let movies = [
         name : "Logan",
         score:2
     }
-]
+];
 
 export const getMovies = () => movies;
 
 export const getById = id => {
     const filteredMovies = movies.filter((movie)=> movie.id === id);
     return filteredMovies[0];
-}
+};
 
-export const deleteMovie = (id) => {
+export const deleteMovie = id => {
     const cleanedMovies = movies.filter((movie) => movie.id !== id);
     if(movies.length > cleanedMovies.length){
         movies = cleanedMovies;
@@ -36,7 +36,7 @@ export const deleteMovie = (id) => {
     }else {
         return false;
     }
-}
+};
 
 export const addMovie = (name, score) => {
     const newMovie = {
@@ -46,4 +46,4 @@ export const addMovie = (name, score) => {
     };
     movies.push(newMovie);
     return newMovie;
-}
+};
